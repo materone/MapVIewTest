@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
 		EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FC187E22FB00194F7A /* UIKit.framework */; };
 		EAB238FF187E22FB00194F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FE187E22FB00194F7A /* Foundation.framework */; };
 		EAB23901187E22FB00194F7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23900187E22FB00194F7A /* CoreGraphics.framework */; };
@@ -29,6 +30,7 @@
 		EAB23931187E22FC00194F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FE187E22FB00194F7A /* Foundation.framework */; };
 		EAB23939187E22FC00194F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAB23937187E22FC00194F7A /* InfoPlist.strings */; };
 		EAB2393C187E22FC00194F7A /* MapVIewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB2393B187E22FC00194F7A /* MapVIewTestTests.m */; };
+		EAB23946187E2B6600194F7A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23945187E2B6600194F7A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA96B8451885F8B6001058FE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EAB238F9187E22FB00194F7A /* MapVIewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapVIewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB238FC187E22FB00194F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAB238FE187E22FB00194F7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +74,7 @@
 		EAB23938187E22FC00194F7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAB2393A187E22FC00194F7A /* MapVIewTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapVIewTestTests.h; sourceTree = "<group>"; };
 		EAB2393B187E22FC00194F7A /* MapVIewTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapVIewTestTests.m; sourceTree = "<group>"; };
+		EAB23945187E2B6600194F7A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */,
+				EAB23946187E2B6600194F7A /* MapKit.framework in Frameworks */,
 				EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */,
 				EAB238FF187E22FB00194F7A /* Foundation.framework in Frameworks */,
 				EAB23901187E22FB00194F7A /* CoreGraphics.framework in Frameworks */,
@@ -100,6 +106,8 @@
 		EAB238F0187E22FB00194F7A = {
 			isa = PBXGroup;
 			children = (
+				EA96B8451885F8B6001058FE /* CoreLocation.framework */,
+				EAB23945187E2B6600194F7A /* MapKit.framework */,
 				EAB23902187E22FB00194F7A /* MapVIewTest */,
 				EAB23934187E22FC00194F7A /* MapVIewTestTests */,
 				EAB238FB187E22FB00194F7A /* Frameworks */,
@@ -489,6 +497,7 @@
 				EAB23941187E22FC00194F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAB23942187E22FC00194F7A /* Build configuration list for PBXNativeTarget "MapVIewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +506,7 @@
 				EAB23944187E22FC00194F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <CLLocationManagerDelegate>
+
+@property (strong,nonatomic) CLLocationManager *clManager;
+@property (strong,nonatomic) CLLocation *startLocation;
+@property (assign,nonatomic) CLLocationDistance distanceFromStart;
+
+@property (weak,nonatomic) IBOutlet UILabel *latitudeLable;
+@property (weak,nonatomic) IBOutlet UILabel *longitudeLable;
+@property (weak,nonatomic) IBOutlet UILabel *horizoneAccuLable;
+@property (weak,nonatomic) IBOutlet UILabel *altitudeLable;
+@property (weak,nonatomic) IBOutlet UILabel *verticalAccuLable;
+@property (weak,nonatomic) IBOutlet UILabel *distanceLable;
+
 
 @end
