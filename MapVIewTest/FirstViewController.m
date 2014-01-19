@@ -46,6 +46,7 @@
     NSString *verticalAccu = [NSString stringWithFormat:@"%gm",newLocation.verticalAccuracy];
     _verticalAccuLable.text = verticalAccu;
     
+    //if accuracy is too low , drop it
     if(newLocation.horizontalAccuracy <0 || newLocation.verticalAccuracy < 0){
         return;
     }
