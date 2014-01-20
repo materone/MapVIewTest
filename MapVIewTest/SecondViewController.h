@@ -8,12 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface SecondViewController : UIViewController
+#import "Place.h"
+
+@interface SecondViewController : UIViewController <CLLocationManagerDelegate>
 {
     IBOutlet UIButton *btnShowLocation;
     IBOutlet MKMapView *mapView;
 }
+
+@property (strong,nonatomic) CLLocationManager *clManager;
+@property (strong,nonatomic) CLLocation *startLocation;
+@property (assign,nonatomic) CLLocationDistance distanceFromStart;
+
+@property (weak,nonatomic) IBOutlet UILabel *latitudeLable;
+@property (weak,nonatomic) IBOutlet UILabel *longitudeLable;
+@property (weak,nonatomic) IBOutlet UILabel *horizoneAccuLable;
+@property (weak,nonatomic) IBOutlet UILabel *altitudeLable;
+@property (weak,nonatomic) IBOutlet UILabel *verticalAccuLable;
+@property (weak,nonatomic) IBOutlet UILabel *distanceLable;
 
 @property (nonatomic, retain) UIButton *btnShowLocation;
 @property (nonatomic, retain) MKMapView *mapView;

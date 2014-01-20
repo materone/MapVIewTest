@@ -31,6 +31,7 @@
 		EAB23939187E22FC00194F7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAB23937187E22FC00194F7A /* InfoPlist.strings */; };
 		EAB2393C187E22FC00194F7A /* MapVIewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB2393B187E22FC00194F7A /* MapVIewTestTests.m */; };
 		EAB23946187E2B6600194F7A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23945187E2B6600194F7A /* MapKit.framework */; };
+		EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB3BE1C188BDC8F00BC8925 /* Place.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		EAB2393A187E22FC00194F7A /* MapVIewTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapVIewTestTests.h; sourceTree = "<group>"; };
 		EAB2393B187E22FC00194F7A /* MapVIewTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapVIewTestTests.m; sourceTree = "<group>"; };
 		EAB23945187E2B6600194F7A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EAB3BE1B188BDC8F00BC8925 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		EAB3BE1C188BDC8F00BC8925 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				EAB23922187E22FC00194F7A /* SecondViewController.m */,
 				EAB23924187E22FC00194F7A /* second.png */,
 				EAB23926187E22FC00194F7A /* second@2x.png */,
+				EAB3BE1B188BDC8F00BC8925 /* Place.h */,
+				EAB3BE1C188BDC8F00BC8925 /* Place.m */,
 				EAB23903187E22FB00194F7A /* Supporting Files */,
 			);
 			path = MapVIewTest;
@@ -307,6 +312,7 @@
 				EAB2390D187E22FB00194F7A /* AppDelegate.m in Sources */,
 				EAB2391C187E22FC00194F7A /* FirstViewController.m in Sources */,
 				EAB23923187E22FC00194F7A /* SecondViewController.m in Sources */,
+				EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
