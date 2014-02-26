@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA5F3D7B18BD9D13009CD6C6 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5F3D7A18BD9D13009CD6C6 /* RouteViewController.m */; };
-		EA5F3D7D18BDD68F009CD6C6 /* route.dat in Resources */ = {isa = PBXBuildFile; fileRef = EA5F3D7C18BDD68F009CD6C6 /* route.dat */; };
 		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
 		EA98C85D18B82AFE009C81F5 /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = EA98C85C18B82AFE009C81F5 /* route.csv */; };
 		EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FC187E22FB00194F7A /* UIKit.framework */; };
@@ -48,9 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EA5F3D7918BD9D13009CD6C6 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
-		EA5F3D7A18BD9D13009CD6C6 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
-		EA5F3D7C18BDD68F009CD6C6 /* route.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = route.dat; path = ../../../route.dat; sourceTree = "<group>"; };
 		EA96B8451885F8B6001058FE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA98C85C18B82AFE009C81F5 /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = route.csv; path = ../../../route.csv; sourceTree = "<group>"; };
 		EAB238F9187E22FB00194F7A /* MapVIewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapVIewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,8 +153,6 @@
 				EAB2391F187E22FC00194F7A /* first@2x.png */,
 				EAB23921187E22FC00194F7A /* SecondViewController.h */,
 				EAB23922187E22FC00194F7A /* SecondViewController.m */,
-				EA5F3D7918BD9D13009CD6C6 /* RouteViewController.h */,
-				EA5F3D7A18BD9D13009CD6C6 /* RouteViewController.m */,
 				EAB23924187E22FC00194F7A /* second.png */,
 				EAB23926187E22FC00194F7A /* second@2x.png */,
 				EAB3BE1B188BDC8F00BC8925 /* Place.h */,
@@ -172,11 +165,7 @@
 		EAB23903187E22FB00194F7A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				EA98C85C18B82AFE009C81F5 /* route.csv */,
-=======
-				EA5F3D7C18BDD68F009CD6C6 /* route.dat */,
->>>>>>> FETCH_HEAD
 				EAB23904187E22FB00194F7A /* MapVIewTest-Info.plist */,
 				EAB23905187E22FB00194F7A /* InfoPlist.strings */,
 				EAB23908187E22FB00194F7A /* main.m */,
@@ -279,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB23907187E22FB00194F7A /* InfoPlist.strings in Resources */,
-				EA5F3D7D18BDD68F009CD6C6 /* route.dat in Resources */,
 				EAB2390F187E22FB00194F7A /* Default.png in Resources */,
 				EAB23911187E22FB00194F7A /* Default@2x.png in Resources */,
 				EAB23913187E22FB00194F7A /* Default-568h@2x.png in Resources */,
@@ -326,7 +314,6 @@
 			files = (
 				EAB23909187E22FB00194F7A /* main.m in Sources */,
 				EAB2390D187E22FB00194F7A /* AppDelegate.m in Sources */,
-				EA5F3D7B18BD9D13009CD6C6 /* RouteViewController.m in Sources */,
 				EAB2391C187E22FC00194F7A /* FirstViewController.m in Sources */,
 				EAB23923187E22FC00194F7A /* SecondViewController.m in Sources */,
 				EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */,
