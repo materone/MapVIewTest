@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA23305418BEB25E005F8B0E /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = EA23305318BEB25E005F8B0E /* route.csv */; };
+		EA7F36F118BEB077002BB946 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7F36F018BEB077002BB946 /* RouteViewController.m */; };
 		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
-		EA98C85D18B82AFE009C81F5 /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = EA98C85C18B82AFE009C81F5 /* route.csv */; };
 		EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FC187E22FB00194F7A /* UIKit.framework */; };
 		EAB238FF187E22FB00194F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FE187E22FB00194F7A /* Foundation.framework */; };
 		EAB23901187E22FB00194F7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23900187E22FB00194F7A /* CoreGraphics.framework */; };
@@ -33,7 +34,6 @@
 		EAB2393C187E22FC00194F7A /* MapVIewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB2393B187E22FC00194F7A /* MapVIewTestTests.m */; };
 		EAB23946187E2B6600194F7A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23945187E2B6600194F7A /* MapKit.framework */; };
 		EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB3BE1C188BDC8F00BC8925 /* Place.m */; };
-		EAFDB4B518BE7CF0005E8120 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFDB4B418BE7CF0005E8120 /* RouteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA23305318BEB25E005F8B0E /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.csv; sourceTree = "<group>"; };
+		EA7F36EF18BEB077002BB946 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
+		EA7F36F018BEB077002BB946 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
 		EA96B8451885F8B6001058FE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		EA98C85C18B82AFE009C81F5 /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = route.csv; path = ../../../route.csv; sourceTree = "<group>"; };
 		EAB238F9187E22FB00194F7A /* MapVIewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapVIewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB238FC187E22FB00194F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAB238FE187E22FB00194F7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,8 +83,6 @@
 		EAB23945187E2B6600194F7A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EAB3BE1B188BDC8F00BC8925 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		EAB3BE1C188BDC8F00BC8925 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
-		EAFDB4B318BE7CF0005E8120 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteViewController.h; path = ../../../../Downloads/temp/MapVIewTest/MapVIewTest/RouteViewController.h; sourceTree = "<group>"; };
-		EAFDB4B418BE7CF0005E8120 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteViewController.m; path = ../../../../Downloads/temp/MapVIewTest/MapVIewTest/RouteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +156,8 @@
 				EAB2391F187E22FC00194F7A /* first@2x.png */,
 				EAB23921187E22FC00194F7A /* SecondViewController.h */,
 				EAB23922187E22FC00194F7A /* SecondViewController.m */,
-				EAFDB4B318BE7CF0005E8120 /* RouteViewController.h */,
-				EAFDB4B418BE7CF0005E8120 /* RouteViewController.m */,
+				EA7F36EF18BEB077002BB946 /* RouteViewController.h */,
+				EA7F36F018BEB077002BB946 /* RouteViewController.m */,
 				EAB23924187E22FC00194F7A /* second.png */,
 				EAB23926187E22FC00194F7A /* second@2x.png */,
 				EAB3BE1B188BDC8F00BC8925 /* Place.h */,
@@ -170,7 +170,7 @@
 		EAB23903187E22FB00194F7A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EA98C85C18B82AFE009C81F5 /* route.csv */,
+				EA23305318BEB25E005F8B0E /* route.csv */,
 				EAB23904187E22FB00194F7A /* MapVIewTest-Info.plist */,
 				EAB23905187E22FB00194F7A /* InfoPlist.strings */,
 				EAB23908187E22FB00194F7A /* main.m */,
@@ -272,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA23305418BEB25E005F8B0E /* route.csv in Resources */,
 				EAB23907187E22FB00194F7A /* InfoPlist.strings in Resources */,
 				EAB2390F187E22FB00194F7A /* Default.png in Resources */,
 				EAB23911187E22FB00194F7A /* Default@2x.png in Resources */,
@@ -282,7 +283,6 @@
 				EAB23920187E22FC00194F7A /* first@2x.png in Resources */,
 				EAB23925187E22FC00194F7A /* second.png in Resources */,
 				EAB23927187E22FC00194F7A /* second@2x.png in Resources */,
-				EA98C85D18B82AFE009C81F5 /* route.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +319,7 @@
 			files = (
 				EAB23909187E22FB00194F7A /* main.m in Sources */,
 				EAB2390D187E22FB00194F7A /* AppDelegate.m in Sources */,
-				EAFDB4B518BE7CF0005E8120 /* RouteViewController.m in Sources */,
+				EA7F36F118BEB077002BB946 /* RouteViewController.m in Sources */,
 				EAB2391C187E22FC00194F7A /* FirstViewController.m in Sources */,
 				EAB23923187E22FC00194F7A /* SecondViewController.m in Sources */,
 				EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */,
