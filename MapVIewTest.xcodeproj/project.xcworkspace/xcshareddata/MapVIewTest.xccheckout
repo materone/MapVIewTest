@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EE4DD26B-2EE4-4879-8F2B-3F8064AA2634</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MapVIewTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2B0A3866-F5A3-4B7F-AFC4-9026CD4298E5</key>
+		<string>https://github.com/materone/MapVIewTest.git</string>
+		<key>EB071B05-429A-45B1-AF49-DC4DD0A5A979</key>
+		<string>https://github.com/materone/MapVIewTest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MapVIewTest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2B0A3866-F5A3-4B7F-AFC4-9026CD4298E5</key>
+		<string>../..</string>
+		<key>C975BE03-3F12-4434-998C-3D35E85C0131</key>
+		<string>../../../../../Downloads/MapRouteDemo</string>
+		<key>EB071B05-429A-45B1-AF49-DC4DD0A5A979</key>
+		<string>../../../../../Downloads/temp/MapVIewTest</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/materone/MapVIewTest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2B0A3866-F5A3-4B7F-AFC4-9026CD4298E5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C975BE03-3F12-4434-998C-3D35E85C0131</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MapRouteDemo</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B0A3866-F5A3-4B7F-AFC4-9026CD4298E5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MapVIewTest</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EB071B05-429A-45B1-AF49-DC4DD0A5A979</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MapVIewTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>
