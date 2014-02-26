@@ -28,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [mapView setDelegate:self];
+    mapView.mapType = MKMapTypeHybrid;
+    mapView.showsUserLocation = YES;
 	// Do any additional setup after loading the view.
 }
 
@@ -42,15 +45,34 @@
     //caculate route
     [self caculateRoute];
     [self updateRouteView];
-    //[self centerMap];
+    [self centerMap];
 }
 
 -(void)caculateRoute {
-//    NSString *routeFilePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"dat"] ;
-//    NSString *strRoute = [NSString stringWithContentsOfFile:routeFilePath];
-    CLLocation *start= [[CLLocation alloc]initWithLatitude:113.9368209838867188 longitude:22.5176277160644531];
-    CLLocation *end= [[CLLocation alloc]initWithLatitude:113.9277038574218750 longitude:22.5169353485107422];
-    routes = [NSArray arrayWithObjects:start, end,nil];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    // create a c array of points.
+    NSMutableArray *pts = [[NSMutableArray alloc]init];
+    
+    for(int idx = 0; idx < pointStrings.count; idx++)
+    {
+        // break the string down even further to latitude and longitude fields.
+        NSString* currentPointString = [pointStrings objectAtIndex:idx];
+        NSArray* latLonArr = [currentPointString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        
+        CLLocationDegrees longitude = [[latLonArr objectAtIndex:0] doubleValue];
+        CLLocationDegrees latitude = [[latLonArr objectAtIndex:1] doubleValue];
+        
+        //NSLog(@"LAT:%f Lon:%f",latitude,longitude);
+        // create our coordinate and add it to the correct spot in the array
+        CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        
+        pts[idx] = location;
+        
+    }
+    routes = pts;
 }
 
 -(void) updateRouteView {
@@ -62,6 +84,7 @@
         CLLocation *loc = [routes objectAtIndex:i];
         coords.latitude = loc.coordinate.latitude;
         coords.longitude = loc.coordinate.longitude;
+        //NSLog(@"AAL:%f AAM:%f",loc.coordinate.latitude,loc.coordinate.longitude);
         pointsToUse[i] = coords;
     }
     MKPolyline *lineOne = [MKPolyline polylineWithCoordinates:pointsToUse count:[routes count]];
@@ -92,8 +115,8 @@
 	region.center.longitude    = (maxLon + minLon) / 2;
 	region.span.latitudeDelta  = maxLat - minLat + 0.018;
 	region.span.longitudeDelta = maxLon - minLon + 0.018;
-    
-	[mapView setRegion:region animated:YES];
+	[mapView setRegion: region animated:YES];
+   
 }
 
 #pragma mark MapView delegate functions
@@ -106,7 +129,7 @@
         MKPolylineView *lineview=[[MKPolylineView alloc] initWithOverlay:overlay] ;
         //路线颜色
         lineview.strokeColor=[UIColor colorWithRed:69.0f/255.0f green:212.0f/255.0f blue:255.0f/255.0f alpha:0.9];
-        lineview.lineWidth=8.0;
+        lineview.lineWidth=2.0;
         return lineview;
     }
     return nil;
