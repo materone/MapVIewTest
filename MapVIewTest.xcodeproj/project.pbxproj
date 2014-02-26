@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
+		EA98C85D18B82AFE009C81F5 /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = EA98C85C18B82AFE009C81F5 /* route.csv */; };
 		EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FC187E22FB00194F7A /* UIKit.framework */; };
 		EAB238FF187E22FB00194F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FE187E22FB00194F7A /* Foundation.framework */; };
 		EAB23901187E22FB00194F7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23900187E22FB00194F7A /* CoreGraphics.framework */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		EA96B8451885F8B6001058FE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA98C85C18B82AFE009C81F5 /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = route.csv; path = ../../../route.csv; sourceTree = "<group>"; };
 		EAB238F9187E22FB00194F7A /* MapVIewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapVIewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB238FC187E22FB00194F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAB238FE187E22FB00194F7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +165,7 @@
 		EAB23903187E22FB00194F7A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA98C85C18B82AFE009C81F5 /* route.csv */,
 				EAB23904187E22FB00194F7A /* MapVIewTest-Info.plist */,
 				EAB23905187E22FB00194F7A /* InfoPlist.strings */,
 				EAB23908187E22FB00194F7A /* main.m */,
@@ -274,6 +277,7 @@
 				EAB23920187E22FC00194F7A /* first@2x.png in Resources */,
 				EAB23925187E22FC00194F7A /* second.png in Resources */,
 				EAB23927187E22FC00194F7A /* second@2x.png in Resources */,
+				EA98C85D18B82AFE009C81F5 /* route.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

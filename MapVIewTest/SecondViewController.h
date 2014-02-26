@@ -12,7 +12,7 @@
 
 #import "Place.h"
 
-@interface SecondViewController : UIViewController <CLLocationManagerDelegate>
+@interface SecondViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 {
     IBOutlet UIButton *btnShowLocation;
     IBOutlet MKMapView *mapView;
@@ -21,6 +21,9 @@
 @property (strong,nonatomic) CLLocationManager *clManager;
 @property (strong,nonatomic) CLLocation *startLocation;
 @property (assign,nonatomic) CLLocationDistance distanceFromStart;
+@property (strong,nonatomic) MKPolyline *routeLine;
+@property (strong,nonatomic) MKPolylineView *routeLineView;
+@property (assign,nonatomic) MKMapRect routeRect;
 
 @property (weak,nonatomic) IBOutlet UILabel *latitudeLable;
 @property (weak,nonatomic) IBOutlet UILabel *longitudeLable;
