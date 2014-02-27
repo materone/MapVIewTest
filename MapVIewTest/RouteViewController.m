@@ -82,9 +82,14 @@
     for (int i = 0; i < [routes count]; i++) {
         CLLocationCoordinate2D coords;
         CLLocation *loc = [routes objectAtIndex:i];
-        coords.latitude = loc.coordinate.latitude;
-        coords.longitude = loc.coordinate.longitude;
+//        coords.latitude = loc.coordinate.latitude;
+//        coords.longitude = loc.coordinate.longitude;
         //NSLog(@"AAL:%f AAM:%f",loc.coordinate.latitude,loc.coordinate.longitude);
+        //make a china map modify
+        if (![WGS84TOGCJ02 isLocationOutOfChina:[loc coordinate]]) {
+            //转换后的coord
+            coords = [WGS84TOGCJ02 transformFromWGSToGCJ:[loc coordinate]];
+        }
         pointsToUse[i] = coords;
     }
     MKPolyline *lineOne = [MKPolyline polylineWithCoordinates:pointsToUse count:[routes count]];

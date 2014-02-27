@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA23305418BEB25E005F8B0E /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = EA23305318BEB25E005F8B0E /* route.csv */; };
 		EA7F36F118BEB077002BB946 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7F36F018BEB077002BB946 /* RouteViewController.m */; };
+		EA961AC118BEE57600D1AA67 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */; };
 		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
 		EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FC187E22FB00194F7A /* UIKit.framework */; };
 		EAB238FF187E22FB00194F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FE187E22FB00194F7A /* Foundation.framework */; };
@@ -50,6 +51,8 @@
 		EA23305318BEB25E005F8B0E /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.csv; sourceTree = "<group>"; };
 		EA7F36EF18BEB077002BB946 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		EA7F36F018BEB077002BB946 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
+		EA961ABF18BEE57600D1AA67 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
+		EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
 		EA96B8451885F8B6001058FE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EAB238F9187E22FB00194F7A /* MapVIewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapVIewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB238FC187E22FB00194F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -160,6 +163,8 @@
 				EA7F36F018BEB077002BB946 /* RouteViewController.m */,
 				EAB23924187E22FC00194F7A /* second.png */,
 				EAB23926187E22FC00194F7A /* second@2x.png */,
+				EA961ABF18BEE57600D1AA67 /* WGS84TOGCJ02.h */,
+				EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */,
 				EAB3BE1B188BDC8F00BC8925 /* Place.h */,
 				EAB3BE1C188BDC8F00BC8925 /* Place.m */,
 				EAB23903187E22FB00194F7A /* Supporting Files */,
@@ -319,6 +324,7 @@
 			files = (
 				EAB23909187E22FB00194F7A /* main.m in Sources */,
 				EAB2390D187E22FB00194F7A /* AppDelegate.m in Sources */,
+				EA961AC118BEE57600D1AA67 /* WGS84TOGCJ02.m in Sources */,
 				EA7F36F118BEB077002BB946 /* RouteViewController.m in Sources */,
 				EAB2391C187E22FC00194F7A /* FirstViewController.m in Sources */,
 				EAB23923187E22FC00194F7A /* SecondViewController.m in Sources */,
