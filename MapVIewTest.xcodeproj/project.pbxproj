@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EA23305418BEB25E005F8B0E /* route.csv in Resources */ = {isa = PBXBuildFile; fileRef = EA23305318BEB25E005F8B0E /* route.csv */; };
+		EA34BCEE18C02E6800133EC6 /* RouteDataViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA34BCED18C02E6800133EC6 /* RouteDataViewer.m */; };
+		EA34BCF118C06EE800133EC6 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA34BCF018C06EE800133EC6 /* DetailVC.m */; };
 		EA7F36F118BEB077002BB946 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7F36F018BEB077002BB946 /* RouteViewController.m */; };
 		EA961AC118BEE57600D1AA67 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */; };
 		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
@@ -49,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		EA23305318BEB25E005F8B0E /* route.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.csv; sourceTree = "<group>"; };
+		EA34BCEC18C02E6800133EC6 /* RouteDataViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDataViewer.h; sourceTree = "<group>"; };
+		EA34BCED18C02E6800133EC6 /* RouteDataViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDataViewer.m; sourceTree = "<group>"; };
+		EA34BCEF18C06EE800133EC6 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		EA34BCF018C06EE800133EC6 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		EA7F36EF18BEB077002BB946 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		EA7F36F018BEB077002BB946 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
 		EA961ABF18BEE57600D1AA67 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
@@ -161,10 +167,14 @@
 				EAB23922187E22FC00194F7A /* SecondViewController.m */,
 				EA7F36EF18BEB077002BB946 /* RouteViewController.h */,
 				EA7F36F018BEB077002BB946 /* RouteViewController.m */,
+				EA34BCEC18C02E6800133EC6 /* RouteDataViewer.h */,
+				EA34BCED18C02E6800133EC6 /* RouteDataViewer.m */,
 				EAB23924187E22FC00194F7A /* second.png */,
 				EAB23926187E22FC00194F7A /* second@2x.png */,
 				EA961ABF18BEE57600D1AA67 /* WGS84TOGCJ02.h */,
 				EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */,
+				EA34BCEF18C06EE800133EC6 /* DetailVC.h */,
+				EA34BCF018C06EE800133EC6 /* DetailVC.m */,
 				EAB3BE1B188BDC8F00BC8925 /* Place.h */,
 				EAB3BE1C188BDC8F00BC8925 /* Place.m */,
 				EAB23903187E22FB00194F7A /* Supporting Files */,
@@ -322,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA34BCF118C06EE800133EC6 /* DetailVC.m in Sources */,
 				EAB23909187E22FB00194F7A /* main.m in Sources */,
 				EAB2390D187E22FB00194F7A /* AppDelegate.m in Sources */,
 				EA961AC118BEE57600D1AA67 /* WGS84TOGCJ02.m in Sources */,
@@ -329,6 +340,7 @@
 				EAB2391C187E22FC00194F7A /* FirstViewController.m in Sources */,
 				EAB23923187E22FC00194F7A /* SecondViewController.m in Sources */,
 				EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */,
+				EA34BCEE18C02E6800133EC6 /* RouteDataViewer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

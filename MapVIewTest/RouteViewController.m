@@ -139,4 +139,15 @@
     }
     return nil;
 }
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"the segue is %@",segue.identifier);
+    UIViewController *dest = segue.destinationViewController;
+    if([dest respondsToSelector:@selector(setData:)]){
+        NSLog(@"in dest %@",[dest description]);
+        [dest setValue:@"route.csv" forKey:@"data"];
+    }
+}
+
 @end
