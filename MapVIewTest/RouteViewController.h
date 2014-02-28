@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "WGS84TOGCJ02.h"
 
 @interface RouteViewController : UIViewController<MKMapViewDelegate>{
     NSArray* routes;
