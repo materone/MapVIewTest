@@ -24,6 +24,7 @@
     _clManager.delegate = self;
     _clManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.clManager startUpdatingLocation];
+    _gpsStatus.text = ([CLLocationManager locationServicesEnabled]?@"Yes":@"No");
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +46,8 @@
     _altitudeLable.text = altitudeStr;
     NSString *verticalAccu = [NSString stringWithFormat:@"%gm",newLocation.verticalAccuracy];
     _verticalAccuLable.text = verticalAccu;
+    
+    _gpsStatus.text = ([CLLocationManager locationServicesEnabled]?@"Yes":@"No");
     
     //if accuracy is too low , drop it
     if(newLocation.horizontalAccuracy <0 || newLocation.verticalAccuracy < 0){

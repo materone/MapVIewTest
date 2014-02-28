@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self loadRouteData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,6 +38,31 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+-(void)loadRouteData{
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSMutableArray *routesLatM = [[NSMutableArray alloc]init];
+    NSMutableArray *routesLongM = [[NSMutableArray alloc]init];
+    
+    for(int idx = 0; idx < pointStrings.count; idx++)
+    {
+        // break the string down even further to latitude and longitude fields.
+        NSString* currentPointString = [pointStrings objectAtIndex:idx];
+        NSArray* latLonArr = [currentPointString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        
+        [routesLatM addObject:[latLonArr objectAtIndex:0] ];
+        [routesLongM addObject:[latLonArr objectAtIndex:1] ];
+        
+    }
+    
+    routesLong = routesLongM;
+    routesLat = routesLatM;
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,24 +74,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [routesLat count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier1 = @"CellDetail";
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier1 forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell =[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    }
     // Configure the cell...
+    cell.textLabel.text = [ NSString stringWithFormat:@"%f",[[routesLat objectAtIndex:indexPath.row]doubleValue]] ;
     
     return cell;
 }

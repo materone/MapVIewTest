@@ -97,6 +97,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ugl-Hm-ozr">
+                                <rect key="frame" x="66" y="258" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RrZ-uS-rKI">
+                                <rect key="frame" x="178" y="258" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -104,6 +117,7 @@
                     <connections>
                         <outlet property="altitudeLable" destination="24O-lz-Mh9" id="zgt-iq-sv2"/>
                         <outlet property="distanceLable" destination="LPT-8O-iSR" id="ORh-Li-zvI"/>
+                        <outlet property="gpsStatus" destination="RrZ-uS-rKI" id="xyb-e8-G8t"/>
                         <outlet property="horizoneAccuLable" destination="R6u-g8-GGw" id="pFN-MA-PBT"/>
                         <outlet property="latitudeLable" destination="Qds-9i-4wM" id="njY-Dq-zRe"/>
                         <outlet property="longitudeLable" destination="fFb-k4-GRN" id="XXn-S6-ch6"/>
@@ -155,7 +169,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jpQ-Qt-EZQ" kind="modal" identifier="todetail" id="HhY-Zn-8SW"/>
+                                    <segue destination="jpQ-Qt-EZQ" kind="modal" id="kpw-gB-49T"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -168,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WX-Fv-vSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="827"/>
+            <point key="canvasLocation" x="462" y="365"/>
         </scene>
         <!--Route Data Viewer - 路径信息-->
         <scene sceneID="ml9-pf-CM7">
@@ -179,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J1x-2v-ADw">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="J1x-2v-ADw">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J1x-2v-ADw" id="jnd-sP-I6p">
@@ -212,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEs-Ho-6Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="826"/>
+            <point key="canvasLocation" x="1127" y="938"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="13">
@@ -425,39 +439,35 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="e1N-RM-ckb" detailTextLabel="e1t-jy-WJL" imageView="dWE-G0-jy9" style="IBUITableViewCellStyleValue1" id="PA2-uT-AJv">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellDetail" textLabel="Ghg-3p-PRF" detailTextLabel="3ns-qM-9CV" style="IBUITableViewCellStyleValue1" id="PA2-uT-AJv">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PA2-uT-AJv" id="UhX-nt-hlQ">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e1N-RM-ckb">
-                                                    <rect key="frame" x="60" y="11" width="33" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ghg-3p-PRF">
+                                                    <rect key="frame" x="15" y="11" width="33" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e1t-jy-WJL">
-                                                    <rect key="frame" x="206" y="11" width="59" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ns-qM-9CV">
+                                                    <rect key="frame" x="221" y="11" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="second.png" id="dWE-G0-jy9">
-                                                    <rect key="frame" x="15" y="6" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="DJu-qg-KPS" id="bCg-KI-RZH"/>
-                                    <outlet property="delegate" destination="DJu-qg-KPS" id="8v4-5q-PaX"/>
+                                    <outlet property="dataSource" destination="dRL-gN-ssP" id="vWa-tu-i2K"/>
+                                    <outlet property="delegate" destination="dRL-gN-ssP" id="UbR-LK-EGq"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -468,8 +478,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vc-8f-IXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="dRL-gN-ssP" customClass="RouteDataViewer"/>
             </objects>
-            <point key="canvasLocation" x="410" y="1124"/>
+            <point key="canvasLocation" x="-74" y="938"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wk1-gL-kr5">
@@ -487,13 +498,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp3-Hu-1pw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="826"/>
+            <point key="canvasLocation" x="579" y="938"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
-        <image name="second.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

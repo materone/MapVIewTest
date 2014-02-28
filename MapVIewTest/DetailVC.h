@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailVC : UITableViewController
+@interface DetailVC : UIViewController
 
 @property (nonatomic,strong) NSString *data;
 @property (strong, nonatomic) IBOutlet UILabel *dataContent;

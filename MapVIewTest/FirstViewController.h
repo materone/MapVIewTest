@@ -12,6 +12,7 @@
 
 @interface FirstViewController : UIViewController <CLLocationManagerDelegate>
 
+@property (weak,nonatomic) IBOutlet UILabel *gpsStatus;
 @property (strong,nonatomic) CLLocationManager *clManager;
 @property (strong,nonatomic) CLLocation *startLocation;
 @property (assign,nonatomic) CLLocationDistance distanceFromStart;

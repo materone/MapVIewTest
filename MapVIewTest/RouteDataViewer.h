@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RouteDataViewer : UITableViewController
+@interface RouteDataViewer : UITableViewController{
+    NSArray *routesLat;
+    NSArray *routesLong;
+}
 
 @property (strong,nonatomic) NSString *data;
 
