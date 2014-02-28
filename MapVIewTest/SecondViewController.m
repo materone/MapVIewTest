@@ -22,6 +22,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = YES;
+    mapView.delegate = self;
     //core location api
     self.clManager = [[CLLocationManager alloc] init];
     _clManager.delegate = self;
