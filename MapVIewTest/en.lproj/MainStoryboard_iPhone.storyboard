@@ -223,6 +223,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tabView" destination="ZLz-A1-EZd" id="Vq8-Ij-wg3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEs-Ho-6Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,7 +442,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellDetail" textLabel="Ghg-3p-PRF" detailTextLabel="3ns-qM-9CV" style="IBUITableViewCellStyleValue1" id="PA2-uT-AJv">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Ghg-3p-PRF" detailTextLabel="3ns-qM-9CV" style="IBUITableViewCellStyleValue1" id="PA2-uT-AJv">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PA2-uT-AJv" id="UhX-nt-hlQ">
@@ -465,16 +468,13 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="dRL-gN-ssP" id="vWa-tu-i2K"/>
-                                    <outlet property="delegate" destination="dRL-gN-ssP" id="UbR-LK-EGq"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="dataContent" destination="Rca-bM-Dqn" id="eKj-K0-cPs"/>
+                        <outlet property="tabView" destination="QZx-Wg-yKF" id="7YT-IW-48T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vc-8f-IXB" userLabel="First Responder" sceneMemberID="firstResponder"/>

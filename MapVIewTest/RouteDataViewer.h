@@ -12,6 +12,7 @@
     NSArray *routesLat;
     NSArray *routesLong;
 }
+@property (strong, nonatomic) IBOutlet UITableView *tabView;
 
 @property (strong,nonatomic) NSString *data;
 

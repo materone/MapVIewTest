@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailVC : UIViewController
+@interface DetailVC : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    NSMutableArray *routeLat;
+    NSMutableArray *routeLong;
+}
 
+@property (strong, nonatomic) IBOutlet UITableView *tabView;
 @property (nonatomic,strong) NSString *data;
 @property (strong, nonatomic) IBOutlet UILabel *dataContent;
 - (IBAction)closeView:(id)sender;

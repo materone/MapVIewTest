@@ -16,7 +16,7 @@
 
 @synthesize data;
 @synthesize dataContent;
-
+@synthesize tabView;
 
 
 - (void)viewDidLoad
@@ -26,6 +26,9 @@
     if ([data length] > 0) {
         dataContent.text = data;
     }
+    [self loadRouteData];
+    [tabView setDataSource:self];
+    [tabView setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,6 +36,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)loadRouteData{
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    routeLat = [[NSMutableArray alloc]init];
+    routeLong = [[NSMutableArray alloc]init];
+    
+    for(int idx = 0; idx < pointStrings.count; idx++)
+    {
+        // break the string down even further to latitude and longitude fields.
+        NSString* currentPointString = [pointStrings objectAtIndex:idx];
+        NSArray* latLonArr = [currentPointString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        
+        [routeLat addObject:[latLonArr objectAtIndex:0] ];
+        [routeLong addObject:[latLonArr objectAtIndex:1] ];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -44,7 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return [routeLat count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -53,6 +76,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",routeLat[[indexPath row]]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",routeLong[[indexPath row]]];
     
     return cell;
 }
