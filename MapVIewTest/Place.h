@@ -13,6 +13,8 @@
 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
+@property (copy, nonatomic) NSString *Name;
+
 @property (assign, nonatomic) CLLocationCoordinate2D coordinate;
 
 @end
