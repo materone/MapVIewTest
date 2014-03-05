@@ -2,7 +2,7 @@
 //  DetailVC.m
 //  MapVIewTest
 //
-//  Created by tony on 14-2-28.
+//  Created by tony test on 14-2-28.
 //  Copyright (c) 2014年 tony. All rights reserved.
 //
 
