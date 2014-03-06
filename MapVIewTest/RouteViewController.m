@@ -31,7 +31,9 @@
     [mapView setDelegate:self];
     mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = YES;
+    annos = [[NSMutableArray alloc]init];
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +50,11 @@
     [self centerMap];
 }
 
+- (IBAction)clear:(id)sender {
+    [mapView removeOverlays:mapView.overlays];
+    [mapView removeAnnotations:annos];
+}
+
 -(void)caculateRoute {
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
     NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
@@ -55,6 +62,7 @@
     
     // create a c array of points.
     NSMutableArray *pts = [[NSMutableArray alloc]init];
+    
     
     for(int idx = 0; idx < pointStrings.count; idx++)
     {
@@ -79,21 +87,45 @@
     [mapView removeOverlays:mapView.overlays];
     
     CLLocationCoordinate2D pointsToUse[[routes count]];
+    //calculate distance
+    CLLocationDistance distance = 0;
+    int countOfAnno = 0;
+    
     for (int i = 0; i < [routes count]; i++) {
         CLLocationCoordinate2D coords;
         CLLocation *loc = [routes objectAtIndex:i];
-//        coords.latitude = loc.coordinate.latitude;
-//        coords.longitude = loc.coordinate.longitude;
-        //NSLog(@"AAL:%f AAM:%f",loc.coordinate.latitude,loc.coordinate.longitude);
         //make a china map modify
         if (![WGS84TOGCJ02 isLocationOutOfChina:[loc coordinate]]) {
             //转换后的coord
             coords = [WGS84TOGCJ02 transformFromWGSToGCJ:[loc coordinate]];
         }
         pointsToUse[i] = coords;
+        
+        //calculate annotations
+        if (i == 0) {
+            from = loc;
+            anno = [[Place alloc]init];
+            anno.Name = [[NSString alloc]initWithFormat:@"%i",countOfAnno++] ;
+            anno.title = anno.Name;
+            anno.coordinate = coords;
+        }else{
+            to = loc;
+            distance += [to distanceFromLocation:from];
+            //NSLog(@"distance :%f",distance);
+            if (distance >= 1000.00f) {
+                anno = [[Place alloc]init];
+                anno.Name = [[NSString alloc]initWithFormat:@"%i",countOfAnno++] ;
+                anno.title = anno.Name;
+                anno.coordinate = coords;
+                distance = 0;
+            }
+            from = to;
+        }
+        [annos addObject:anno];
     }
     MKPolyline *lineOne = [MKPolyline polylineWithCoordinates:pointsToUse count:[routes count]];
     [mapView addOverlay:lineOne];
+    [mapView addAnnotations:annos];
 }
 
 -(void) centerMap {
