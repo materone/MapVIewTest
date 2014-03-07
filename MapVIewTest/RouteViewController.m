@@ -52,7 +52,7 @@
 
 - (IBAction)clear:(id)sender {
     [mapView removeOverlays:mapView.overlays];
-    [mapView removeAnnotations:annos];
+    [mapView removeAnnotations:mapView.annotations];
 }
 
 -(void)caculateRoute {

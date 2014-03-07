@@ -2,7 +2,7 @@
 //  DetailVC.m
 //  MapVIewTest
 //
-//  Created by tony on 14-2-28.
+//  Created by tony test on 14-2-28.
 //  Copyright (c) 2014年 tony. All rights reserved.
 //
 
@@ -79,8 +79,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",routeLat[[indexPath row]]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",routeLong[[indexPath row]]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%f",[routeLat[[indexPath row]]doubleValue]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",[routeLong[[indexPath row]]doubleValue]];
     
     return cell;
 }
