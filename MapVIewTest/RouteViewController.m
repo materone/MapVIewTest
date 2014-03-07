@@ -166,7 +166,7 @@
         MKPolylineView *lineview=[[MKPolylineView alloc] initWithOverlay:overlay] ;
         //路线颜色
         lineview.strokeColor=[UIColor colorWithRed:69.0f/255.0f green:212.0f/255.0f blue:255.0f/255.0f alpha:0.9];
-        lineview.lineWidth=2.0;
+        lineview.lineWidth=6.0;
         return lineview;
     }
     return nil;
