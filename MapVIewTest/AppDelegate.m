@@ -4,7 +4,7 @@
 //
 //  Created by tony on 14-1-9.
 //  Copyright (c) 2014年 tony. All rights reserved.
-//
+//  @mod by tony 20140310 test the ignore file effect
 
 #import "AppDelegate.h"
 
