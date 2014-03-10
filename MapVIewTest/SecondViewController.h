@@ -16,6 +16,7 @@
 {
     IBOutlet UIButton *btnShowLocation;
     IBOutlet MKMapView *mapView;
+    NSMutableArray *routeData;
 }
 
 @property (strong,nonatomic) CLLocationManager *clManager;

@@ -19,6 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //init data
+    routeData = [[NSMutableArray alloc]init];
 	// Do any additional setup after loading the view, typically from a nib.
     mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = YES;
@@ -28,6 +30,10 @@
     _clManager.delegate = self;
     _clManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.clManager startUpdatingLocation];
+    BOOL flag = [routeData writeToFile:@"adsf" atomically:YES];
+    if (flag) {
+        NSLog(@"Write to file %@",@"fileName");
+    }
 }
 
 - (void)didReceiveMemoryWarning
