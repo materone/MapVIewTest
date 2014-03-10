@@ -1,16 +1,4 @@
-#########################
-# .gitignore file for Xcode5
-#
-# NB: if you are storing "built" products, this WILL NOT WORK,
-#   and you should use a different .gitignore (or none at all)
-# This file is for SOURCE projects, where there are many extra
-#   files that we want to exclude
-#
-# For updates, see: http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
-#   and https://gist.github.com/adamgit/3786883
-#########################
- 
-#####
+
 # OS X temporary files that should never be committed
  
 .DS_Store
@@ -26,17 +14,6 @@ profile
  
 *~.nib
  
- 
-####
-# Xcode build files -
-#
-# NB: slash on the end, so we only remove the FOLDER, not any files that were badly named "DerivedData"
- 
-DerivedData/
- 
-# NB: slash on the end, so we only remove the FOLDER, not any files that were badly named "build"
- 
-build/
  
  
 #####
@@ -54,12 +31,7 @@ build/
 *.mode1v3
 *.mode2v3
 *.perspectivev3
-#    NB: also, whitelist the default ones, some projects need to use these
-!default.pbxuser
-!default.mode1v3
-!default.mode2v3
-!default.perspectivev3
- 
+
  
 ####
 # Xcode 4 - semi-personal settings, often included in workspaces
@@ -118,8 +90,3 @@ xcuserdata
 # and should therefore not be checked into the VCS.
  
 *.xccheckout
- 
-####
-# UNKNOWN: recommended by others, but I can't discover what these files are
-#
-# ...none. Everything is now explained.:
