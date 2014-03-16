@@ -29,8 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self loadRouteData];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    [self loadRouteData:filePath];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,8 +39,7 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)loadRouteData{
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+-(void)loadRouteData:(NSString *)filePath{
     NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     

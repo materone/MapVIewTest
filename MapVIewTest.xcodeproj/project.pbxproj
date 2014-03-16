@@ -13,6 +13,7 @@
 		EA7F36F118BEB077002BB946 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7F36F018BEB077002BB946 /* RouteViewController.m */; };
 		EA961AC118BEE57600D1AA67 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */; };
 		EA96B8461885F8B6001058FE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96B8451885F8B6001058FE /* CoreLocation.framework */; };
+		EAACD24618D4AA7E00996346 /* route.trk in Resources */ = {isa = PBXBuildFile; fileRef = EAACD24518D4AA7E00996346 /* route.trk */; };
 		EAB238FD187E22FB00194F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FC187E22FB00194F7A /* UIKit.framework */; };
 		EAB238FF187E22FB00194F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB238FE187E22FB00194F7A /* Foundation.framework */; };
 		EAB23901187E22FB00194F7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23900187E22FB00194F7A /* CoreGraphics.framework */; };
@@ -60,6 +61,7 @@
 		EA961ABF18BEE57600D1AA67 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
 		EA961AC018BEE57600D1AA67 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
 		EA96B8451885F8B6001058FE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EAACD24518D4AA7E00996346 /* route.trk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.trk; sourceTree = "<group>"; };
 		EAB238F9187E22FB00194F7A /* MapVIewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapVIewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB238FC187E22FB00194F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EAB238FE187E22FB00194F7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +195,7 @@
 				EAB2390E187E22FB00194F7A /* Default.png */,
 				EAB23910187E22FB00194F7A /* Default@2x.png */,
 				EAB23912187E22FB00194F7A /* Default-568h@2x.png */,
+				EAACD24518D4AA7E00996346 /* route.trk */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				EA23305418BEB25E005F8B0E /* route.csv in Resources */,
 				EAB23907187E22FB00194F7A /* InfoPlist.strings in Resources */,
 				EAB2390F187E22FB00194F7A /* Default.png in Resources */,
+				EAACD24618D4AA7E00996346 /* route.trk in Resources */,
 				EAB23911187E22FB00194F7A /* Default@2x.png in Resources */,
 				EAB23913187E22FB00194F7A /* Default-568h@2x.png in Resources */,
 				EAB23916187E22FC00194F7A /* MainStoryboard_iPhone.storyboard in Resources */,

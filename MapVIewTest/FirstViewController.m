@@ -25,7 +25,16 @@
     _clManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.clManager startUpdatingLocation];
     _gpsStatus.text = ([CLLocationManager locationServicesEnabled]?@"Yes":@"No");
+    
+    self.routes = [[NSMutableArray alloc]init];
+    
+    _filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
+    self.fileManager = [NSFileManager defaultManager];
+    _fileAttr = [_fileManager attributesOfItemAtPath:_filePath error:nil];
+    _fileInfo.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileSize]];
+    _fileLastUpdate.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileModificationDate]];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -50,7 +59,7 @@
     _gpsStatus.text = ([CLLocationManager locationServicesEnabled]?@"Yes":@"No");
     
     //if accuracy is too low , drop it
-    if(newLocation.horizontalAccuracy <0 || newLocation.verticalAccuracy < 0){
+    if(newLocation.horizontalAccuracy <0 || newLocation.verticalAccuracy < -10){
         return;
     }
     if(newLocation.horizontalAccuracy >100 || newLocation.verticalAccuracy > 50){
@@ -64,6 +73,8 @@
     }
     NSString *distanceStr = [NSString stringWithFormat:@"%gm",_distanceFromStart];
     _distanceLable.text = distanceStr;
+    [_routes addObject:[[NSString alloc] initWithFormat:@"%g,%g",newLocation.coordinate.longitude,newLocation.coordinate.latitude]];
+    NSLog(@"add route %lu",(unsigned long)[_routes count]);
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
@@ -76,5 +87,25 @@
                           cancelButtonTitle:@"Okay"
                           otherButtonTitles:nil];
     [alert show];
+}
+- (IBAction)save:(id)sender {
+    _filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
+    [_routes writeToFile:_filePath atomically:YES];
+    _fileAttr = [_fileManager attributesOfItemAtPath:_filePath error:nil];
+    _fileInfo.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileSize]];
+    _fileLastUpdate.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileModificationDate]];
+    
+    //alert
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Save Track File" message:[NSString stringWithFormat:@"Save Counts :%lu",(unsigned long)[_routes count]] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (IBAction)delFile:(id)sender {
+    _filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
+    [_routes removeAllObjects];
+    [_routes writeToFile:_filePath atomically:YES];
+    _fileAttr = [_fileManager attributesOfItemAtPath:_filePath error:nil];
+    _fileInfo.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileSize]];
+    _fileLastUpdate.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileModificationDate]];
 }
 @end

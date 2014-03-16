@@ -45,7 +45,8 @@
 - (IBAction)markroute:(id)sender {
     NSLog(@"Click route button");
     //caculate route
-    [self caculateRoute];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    [self caculateRoute:filePath isArray:NO];
     [self updateRouteView];
     [self centerMap];
 }
@@ -55,10 +56,31 @@
     [mapView removeAnnotations:mapView.annotations];
 }
 
--(void)caculateRoute {
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+- (IBAction)liveShow:(id)sender {
+    NSLog(@"Click live button");
+    //caculate route
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
+    [self caculateRoute:filePath isArray:YES];
+    [self updateRouteView];
+    [self centerMap];
+}
+
+-(void)caculateRoute :(NSString*) filePath isArray:(BOOL)flag{
     NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSArray* pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSArray* pointStrings = nil;
+    if(flag){
+        pointStrings = [[NSArray alloc]initWithContentsOfFile:filePath];
+    }else{
+        pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    
+    if (pointStrings == nil) {
+        return;
+    }
+    
+    //show
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Load Track File" message:[NSString stringWithFormat:@"Point Counts :%lu",(unsigned long)[pointStrings count]] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    [alert show];
     
     // create a c array of points.
     NSMutableArray *pts = [[NSMutableArray alloc]init];
@@ -98,6 +120,8 @@
         if (![WGS84TOGCJ02 isLocationOutOfChina:[loc coordinate]]) {
             //转换后的coord
             coords = [WGS84TOGCJ02 transformFromWGSToGCJ:[loc coordinate]];
+        }else{
+            coords = [loc coordinate];
         }
         pointsToUse[i] = coords;
         

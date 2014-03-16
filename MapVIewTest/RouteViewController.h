@@ -22,5 +22,6 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)markroute:(id)sender;
 - (IBAction)clear:(id)sender;
+- (IBAction)liveShow:(id)sender;
 
 @end
