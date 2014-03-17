@@ -22,7 +22,7 @@
     
     self.clManager = [[CLLocationManager alloc] init];
     _clManager.delegate = self;
-    _clManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _clManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     [self.clManager startUpdatingLocation];
     _gpsStatus.text = ([CLLocationManager locationServicesEnabled]?@"Yes":@"No");
     
@@ -89,15 +89,25 @@
     [alert show];
 }
 - (IBAction)save:(id)sender {
+    //alert
+    BlockUIAlertView *alert = [[BlockUIAlertView alloc]initWithTitle:@"Save Track File" message:[NSString stringWithFormat:@"Save Counts :%lu",(unsigned long)[_routes count]] cancelButtonTitle:@"Cancel" clickButton:^(NSInteger indexButton) {
+        NSLog(@"%d click",indexButton);
+        if (indexButton == 0) {
+            return ;
+        }else{
+            NSLog(@"save track file");
+            [self saveTrackFile];
+        }
+    } otherButtonTitles:@"Yes"];
+    [alert show];
+}
+
+-(void)saveTrackFile{
     _filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
     [_routes writeToFile:_filePath atomically:YES];
     _fileAttr = [_fileManager attributesOfItemAtPath:_filePath error:nil];
     _fileInfo.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileSize]];
     _fileLastUpdate.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileModificationDate]];
-    
-    //alert
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Save Track File" message:[NSString stringWithFormat:@"Save Counts :%lu",(unsigned long)[_routes count]] delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
-    [alert show];
 }
 
 - (IBAction)delFile:(id)sender {

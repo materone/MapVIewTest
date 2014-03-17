@@ -38,6 +38,7 @@
 		EAB2393C187E22FC00194F7A /* MapVIewTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB2393B187E22FC00194F7A /* MapVIewTestTests.m */; };
 		EAB23946187E2B6600194F7A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB23945187E2B6600194F7A /* MapKit.framework */; };
 		EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB3BE1C188BDC8F00BC8925 /* Place.m */; };
+		EAFAF8DB18D6EE4F002EA2D4 /* BlockUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFAF8DA18D6EE4F002EA2D4 /* BlockUIAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		EAB23945187E2B6600194F7A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EAB3BE1B188BDC8F00BC8925 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		EAB3BE1C188BDC8F00BC8925 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		EAFAF8D918D6EE4F002EA2D4 /* BlockUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockUIAlertView.h; sourceTree = "<group>"; };
+		EAFAF8DA18D6EE4F002EA2D4 /* BlockUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockUIAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				EA34BCF018C06EE800133EC6 /* DetailVC.m */,
 				EAB3BE1B188BDC8F00BC8925 /* Place.h */,
 				EAB3BE1C188BDC8F00BC8925 /* Place.m */,
+				EAFAF8D918D6EE4F002EA2D4 /* BlockUIAlertView.h */,
+				EAFAF8DA18D6EE4F002EA2D4 /* BlockUIAlertView.m */,
 				EAB23903187E22FB00194F7A /* Supporting Files */,
 			);
 			path = MapVIewTest;
@@ -345,6 +350,7 @@
 				EAB23923187E22FC00194F7A /* SecondViewController.m in Sources */,
 				EAB3BE1D188BDC8F00BC8925 /* Place.m in Sources */,
 				EA34BCEE18C02E6800133EC6 /* RouteDataViewer.m in Sources */,
+				EAFAF8DB18D6EE4F002EA2D4 /* BlockUIAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +473,7 @@
 				GCC_PREFIX_HEADER = "MapVIewTest/MapVIewTest-Prefix.pch";
 				INFOPLIST_FILE = "MapVIewTest/MapVIewTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,6 +485,7 @@
 				GCC_PREFIX_HEADER = "MapVIewTest/MapVIewTest-Prefix.pch";
 				INFOPLIST_FILE = "MapVIewTest/MapVIewTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
