@@ -61,6 +61,10 @@
     //caculate route
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
     [self caculateRoute:filePath isArray:YES];
+    //if count of routes == 0 then return , can not update the map
+    if([routes count] == 0){
+        return ;
+    }
     [self updateRouteView];
     [self centerMap];
 }

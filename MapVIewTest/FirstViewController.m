@@ -45,9 +45,9 @@
 #pragma mark - CoreLocation Delegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocation *newLocation = [locations lastObject];
-    NSString *latitudeStr = [NSString stringWithFormat:@"%g\u00B0",newLocation.coordinate.latitude];
+    NSString *latitudeStr = [NSString stringWithFormat:@"%.16f\u00B0", newLocation.coordinate.latitude ];
     _latitudeLable.text = latitudeStr;
-    NSString *longitudeStr = [NSString stringWithFormat:@"%g\u00B0",newLocation.coordinate.longitude];
+    NSString *longitudeStr = [NSString stringWithFormat:@"%.16f\u00B0",newLocation.coordinate.longitude];
     _longitudeLable.text = longitudeStr;
     NSString *horiAccuStr = [NSString stringWithFormat:@"%gm",newLocation.horizontalAccuracy];
     _horizoneAccuLable.text = horiAccuStr;
@@ -73,7 +73,7 @@
     }
     NSString *distanceStr = [NSString stringWithFormat:@"%gm",_distanceFromStart];
     _distanceLable.text = distanceStr;
-    [_routes addObject:[[NSString alloc] initWithFormat:@"%g,%g",newLocation.coordinate.longitude,newLocation.coordinate.latitude]];
+    [_routes addObject:[[NSString alloc] initWithFormat:@"%.16f,%.16f",newLocation.coordinate.longitude,newLocation.coordinate.latitude]];
     NSLog(@"add route %lu",(unsigned long)[_routes count]);
 }
 
