@@ -162,8 +162,5 @@ xcuserdata/**/*
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
 # ...none. Everything is now explained.
-<<<<<<< HEAD
 MapVIewTest.xcodeproj/project.xcworkspace/xcuserdata/tony.xcuserdatad/UserInterfaceState.xcuserstate
-=======
-*.xcuserstate
->>>>>>> FETCH_HEAD
+
