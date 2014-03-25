@@ -54,6 +54,19 @@
 - (IBAction)clear:(id)sender {
     [mapView removeOverlays:mapView.overlays];
     [mapView removeAnnotations:mapView.annotations];
+    //some time func
+    NSCalendar *now = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit |NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
+    NSDate *date = [NSDate date];
+    NSDateComponents *comps = [now components:unitFlags fromDate:date];
+    NSLog(@"%02ld:%02ld:%02ld",(long)[comps hour] ,(long)[comps minute] ,(long)[comps second] );
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    NSLog(@"formattedDateString: %@", formattedDateString);
 }
 
 - (IBAction)liveShow:(id)sender {
