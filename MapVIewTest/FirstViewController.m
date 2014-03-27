@@ -74,7 +74,7 @@
     NSString *distanceStr = [NSString stringWithFormat:@"%gm",_distanceFromStart];
     _distanceLable.text = distanceStr;
     [_routes addObject:[[NSString alloc] initWithFormat:@"%.16f,%.16f",newLocation.coordinate.longitude,newLocation.coordinate.latitude]];
-    NSLog(@"add route %lu",(unsigned long)[_routes count]);
+   // NSLog(@"add route %lu",(unsigned long)[_routes count]);
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
@@ -100,6 +100,7 @@
         }
     } otherButtonTitles:@"Yes"];
     [alert show];
+    [self getCurrentDate];
 }
 
 -(void)saveTrackFile{
@@ -117,5 +118,16 @@
     _fileAttr = [_fileManager attributesOfItemAtPath:_filePath error:nil];
     _fileInfo.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileSize]];
     _fileLastUpdate.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileModificationDate]];
+}
+
+-(NSString *)getCurrentDate{
+    NSString *ret = nil;
+    NSDate *now = [NSDate date];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"yyyyMMddHHmmssSSS"];
+//    [df setTimeZone:[[NSTimeZone alloc]initWithName:@"CST"]];
+    ret = [df stringFromDate:now];
+    NSLog(@"Time:%@",ret);
+    return ret;
 }
 @end
