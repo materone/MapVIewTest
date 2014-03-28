@@ -11,6 +11,10 @@
 @interface RouteDataViewer : UITableViewController{
     NSArray *routesLat;
     NSArray *routesLong;
+    NSMutableArray *files;
+    NSString *DocDir;
+    NSFileManager *fm;
+    NSDictionary *fileAttr;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tabView;
 

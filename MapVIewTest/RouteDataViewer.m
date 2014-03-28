@@ -29,11 +29,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
-    [self loadRouteData:filePath];
-
+    //disable data button
+    //NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    //[self loadRouteData:filePath];
+    
+    NSArray *documentDirectories =
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    DocDir = [documentDirectories objectAtIndex:0];
+    fm = [NSFileManager defaultManager];
+    NSError *error = nil;
+    
+    files = [NSMutableArray arrayWithArray:[fm contentsOfDirectoryAtPath:DocDir  error:&error]];
+    if (files == nil) {
+        // Handle the error
+        NSLog(@"Get Directory files error!!");
+    }
+    
+    NSLog(@"Files %d",[files count]);
+    
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -80,7 +95,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [routesLat count];
+    //return [routesLat count];
+    return [files count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -88,27 +104,35 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     // Configure the cell...
-    cell.textLabel.text = [ NSString stringWithFormat:@"%f",[[routesLat objectAtIndex:indexPath.row]doubleValue]] ;
-    
+    //cell.textLabel.text = [ NSString stringWithFormat:@"%f",[[routesLat objectAtIndex:indexPath.row]doubleValue]] ;
+    cell.textLabel.text = [files objectAtIndex:indexPath.row];
+    fileAttr = [fm attributesOfItemAtPath:[DocDir stringByAppendingPathComponent:[files objectAtIndex:indexPath.row]] error:nil];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",[fileAttr valueForKey:NSFileSize]];
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //Delete the file
+        NSError *err=nil;
+        [fm removeItemAtPath:[DocDir stringByAppendingPathComponent:[files objectAtIndex:indexPath.row]] error:&err];
+        [files removeObjectAtIndex:indexPath.row];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
@@ -116,7 +140,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

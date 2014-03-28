@@ -109,6 +109,14 @@
     _fileAttr = [_fileManager attributesOfItemAtPath:_filePath error:nil];
     _fileInfo.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileSize]];
     _fileLastUpdate.text = [NSString stringWithFormat:@"%@",[_fileAttr valueForKey:NSFileModificationDate]];
+    
+    //i will put in another file in document
+    NSArray *documentDirectories =
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [documentDirectories objectAtIndex:0];
+    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.dat",[self getCurrentDate]]];
+    NSLog(@"FilePath %@",filePath);
+    [_routes writeToFile:filePath atomically:YES];
 }
 
 - (IBAction)delFile:(id)sender {
