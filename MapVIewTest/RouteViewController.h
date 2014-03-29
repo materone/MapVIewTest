@@ -18,10 +18,14 @@
     CLLocation *to;
     NSMutableArray * annos;
     Place *anno;
+    NSString* filePath;
 }
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong,nonatomic) NSString *filePath;
 - (IBAction)markroute:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)liveShow:(id)sender;
+-(void) displayRoute;
+-(void)caculateRoute :(NSString*) routeFilePath isArray:(BOOL)flag;
 
 @end

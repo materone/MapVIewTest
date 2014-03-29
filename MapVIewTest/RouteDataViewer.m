@@ -158,17 +158,23 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
+    RouteViewController *dest = [segue destinationViewController];
     // Pass the selected object to the new view controller.
+    if([sender isKindOfClass:[UITableViewCell class]]){
+        NSLog(@"This is a uitableviewcell");
+        UITableViewCell *cell = sender;
+        [dest setFilePath:[DocDir stringByAppendingPathComponent:cell.textLabel.text]];
+        [dest caculateRoute:dest.filePath isArray:YES];
+        [dest displayRoute];
+    }
 }
-
- */
 
 - (IBAction)doBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:Nil];

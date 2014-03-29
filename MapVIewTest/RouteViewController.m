@@ -15,6 +15,7 @@
 @implementation RouteViewController
 
 @synthesize mapView;
+@synthesize filePath;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,8 +46,25 @@
 - (IBAction)markroute:(id)sender {
     NSLog(@"Click route button");
     //caculate route
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
-    [self caculateRoute:filePath isArray:NO];
+    filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"csv"];
+    [self caculateRoute:filePath isArray:NO];    
+    [self displayRoute];
+
+}
+
+- (IBAction)liveShow:(id)sender {
+    NSLog(@"Click live button");
+    //caculate route
+    filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
+    [self caculateRoute:filePath isArray:YES];
+    [self displayRoute];
+}
+
+-(void) displayRoute{
+    //if count of routes == 0 then return , can not update the map
+    if([routes count] == 0){
+        return ;
+    }
     [self updateRouteView];
     [self centerMap];
 }
@@ -69,24 +87,13 @@
     NSLog(@"formattedDateString: %@", formattedDateString);
 }
 
-- (IBAction)liveShow:(id)sender {
-    NSLog(@"Click live button");
-    //caculate route
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"trk"];
-    [self caculateRoute:filePath isArray:YES];
-    //if count of routes == 0 then return , can not update the map
-    if([routes count] == 0){
-        return ;
-    }
-    [self updateRouteView];
-    [self centerMap];
-}
 
--(void)caculateRoute :(NSString*) filePath isArray:(BOOL)flag{
-    NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+
+-(void)caculateRoute :(NSString*) routeFilePath isArray:(BOOL)flag{
+    NSString* fileContents = [NSString stringWithContentsOfFile:routeFilePath encoding:NSUTF8StringEncoding error:nil];
     NSArray* pointStrings = nil;
     if(flag){
-        pointStrings = [[NSArray alloc]initWithContentsOfFile:filePath];
+        pointStrings = [[NSArray alloc]initWithContentsOfFile:routeFilePath];
     }else{
         pointStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }

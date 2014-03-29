@@ -7,6 +7,7 @@
 //  2014-03-10
 
 #import <UIKit/UIKit.h>
+#import "RouteViewController.h"
 
 @interface RouteDataViewer : UITableViewController{
     NSArray *routesLat;
