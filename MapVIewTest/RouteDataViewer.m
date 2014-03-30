@@ -169,11 +169,13 @@
     RouteViewController *dest = [segue destinationViewController];
     // Pass the selected object to the new view controller.
     if([sender isKindOfClass:[UITableViewCell class]]){
-        NSLog(@"This is a uitableviewcell");
+        NSLog(@"UITableViewCell ohh!");
         UITableViewCell *cell = sender;
         [dest setFilePath:[DocDir stringByAppendingPathComponent:cell.textLabel.text]];
         [dest caculateRoute:dest.filePath isArray:YES];
-        [dest displayRoute];
+        AppDelegate *appDel = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        appDel.bShowmap = YES;
+        //[dest displayRoute];
     }
 }
 

@@ -20,11 +20,9 @@
     NSMutableArray * annos;
     Place *anno;
     NSString* filePath;
-    BOOL bShowmap;
 }
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong,nonatomic) NSString *filePath;
-@property (nonatomic) BOOL bShowmap;
 
 - (IBAction)markroute:(id)sender;
 - (IBAction)clear:(id)sender;

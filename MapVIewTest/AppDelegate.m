@@ -10,11 +10,11 @@
 
 extern BOOL bShowmap;
 @implementation AppDelegate
-
+@synthesize bShowmap;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    bShowmap = FALSE;
+    bShowmap = NO;
     return YES;
 }
 							

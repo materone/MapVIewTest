@@ -16,7 +16,6 @@
 
 @synthesize mapView;
 @synthesize filePath;
-@synthesize bShowmap;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +23,12 @@
     if (self) {
         // Custom initialization
     }
+    AppDelegate * appDel = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if (appDel.bShowmap) {
+        NSLog(@"will done load!");
+        [self displayRoute];
+    }
+    appDel.bShowmap = NO;
     return self;
 }
 
@@ -34,16 +39,17 @@
     mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = YES;
     annos = [[NSMutableArray alloc]init];
-    bShowmap = FALSE;
 	// Do any additional setup after loading the view.
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    if (bShowmap) {
+    AppDelegate * appDel = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if (appDel.bShowmap) {
         NSLog(@"will appears!");
         [self displayRoute];
     }
+    appDel.bShowmap = NO;
 }
 
 - (void)didReceiveMemoryWarning
