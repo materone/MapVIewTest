@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "WGS84TOGCJ02.h"
 #import "Place.h"
+#import "AppDelegate.h"
 
 @interface RouteViewController : UIViewController<MKMapViewDelegate>{
     NSArray* routes;
@@ -19,9 +20,12 @@
     NSMutableArray * annos;
     Place *anno;
     NSString* filePath;
+    BOOL bShowmap;
 }
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong,nonatomic) NSString *filePath;
+@property (nonatomic) BOOL bShowmap;
+
 - (IBAction)markroute:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)liveShow:(id)sender;

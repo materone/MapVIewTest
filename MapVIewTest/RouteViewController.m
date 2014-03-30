@@ -16,6 +16,7 @@
 
 @synthesize mapView;
 @synthesize filePath;
+@synthesize bShowmap;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,8 +34,16 @@
     mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = YES;
     annos = [[NSMutableArray alloc]init];
+    bShowmap = FALSE;
 	// Do any additional setup after loading the view.
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    if (bShowmap) {
+        NSLog(@"will appears!");
+        [self displayRoute];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +71,7 @@
 
 -(void) displayRoute{
     //if count of routes == 0 then return , can not update the map
+    NSLog(@"display route!");
     if([routes count] == 0){
         return ;
     }

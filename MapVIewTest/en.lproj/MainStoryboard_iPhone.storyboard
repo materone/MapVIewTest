@@ -281,7 +281,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fuG-p1-eBh" kind="push" id="wlR-wi-ylE"/>
+                                    <segue destination="fuG-p1-eBh" kind="push" id="TBa-L9-MGB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -312,7 +312,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEs-Ho-6Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="972"/>
+            <point key="canvasLocation" x="1594" y="1202"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="13">
@@ -581,7 +581,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp3-Hu-1pw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="1202"/>
+            <point key="canvasLocation" x="983" y="1202"/>
         </scene>
     </scenes>
     <resources>
@@ -594,6 +594,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wlR-wi-ylE"/>
+        <segue reference="TBa-L9-MGB"/>
     </inferredMetricsTieBreakers>
 </document>
