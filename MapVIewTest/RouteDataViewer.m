@@ -141,6 +141,12 @@
     }   
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    delegate.fileRoutePath = [DocDir stringByAppendingPathComponent:[files objectAtIndex:indexPath.row]];
+    delegate.bShowmap = YES;
+    [self dismissViewControllerAnimated:NO completion:Nil];
+}
 
 /*
 // Override to support rearranging the table view.
@@ -161,7 +167,7 @@
 
 #pragma mark - Navigation
 
-
+/*
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -178,9 +184,9 @@
         //[dest displayRoute];
     }
 }
+ */
 
 - (IBAction)doBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:Nil];
-    [self.navigationController navigationItem];
 }
 @end

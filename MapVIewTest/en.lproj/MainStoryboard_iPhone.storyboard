@@ -180,11 +180,11 @@
             <objects>
                 <viewController id="fuG-p1-eBh" customClass="RouteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uoI-22-ehd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="6zT-Hb-2Uu">
-                                <rect key="frame" x="0.0" y="-9" width="320" height="557"/>
+                                <rect key="frame" x="0.0" y="-8" width="320" height="507"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yaE-k5-fPQ">
@@ -280,9 +280,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="fuG-p1-eBh" kind="push" id="TBa-L9-MGB"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -593,7 +590,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="TBa-L9-MGB"/>
-    </inferredMetricsTieBreakers>
 </document>

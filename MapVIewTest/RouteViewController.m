@@ -44,12 +44,15 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     AppDelegate * appDel = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     if (appDel.bShowmap) {
         NSLog(@"will appears!");
+        [self caculateRoute:appDel.fileRoutePath isArray:YES];
         [self displayRoute];
     }
     appDel.bShowmap = NO;
+    appDel.fileRoutePath = nil;
 }
 
 - (void)didReceiveMemoryWarning

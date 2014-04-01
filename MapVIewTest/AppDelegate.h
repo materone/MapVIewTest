@@ -10,8 +10,10 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     BOOL bShowmap;
+    NSString *fileRoutePath;
 }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong,nonatomic) NSString *fileRoutePath;
 @property (nonatomic)BOOL bShowmap;
 @end

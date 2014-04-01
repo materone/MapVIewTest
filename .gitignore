@@ -165,3 +165,5 @@ xcuserdata/**/*
 # ...none. Everything is now explained.
 MapVIewTest.xcodeproj/project.xcworkspace/xcuserdata/tony.xcuserdatad/UserInterfaceState.xcuserstate
 
+
+*.xcbkptlist

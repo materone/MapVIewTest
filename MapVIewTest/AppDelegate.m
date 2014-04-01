@@ -8,13 +8,15 @@
 
 #import "AppDelegate.h"
 
-extern BOOL bShowmap;
+//extern BOOL bShowmap;
 @implementation AppDelegate
 @synthesize bShowmap;
+@synthesize fileRoutePath;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     bShowmap = NO;
+    fileRoutePath = nil;
     return YES;
 }
 							
